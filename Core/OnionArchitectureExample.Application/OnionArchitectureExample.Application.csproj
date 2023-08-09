@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\OnionArchitectureExample.Domain\OnionArchitectureExample.Domain.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Abstraction\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Abstraction\" />
+  </ItemGroup>
+</Project>
