@@ -1,13 +1,17 @@
-﻿using OnionArchitectureExample.Application.Abstraction;
-using OnionArchitectureExample.Persistence.Concrete;
+﻿using Microsoft.EntityFrameworkCore;
+using OnionArchitectureExample.Application.Abstraction;
+using OnionArchitectureExample.Application.Repositories;
+using OnionArchitectureExample.Persistence;
+using OnionArchitectureExample.Persistence.Contexts;
+using OnionArchitectureExample.Persistence.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddHttpContextAccessor();
 
+builder.Services.AddPersistenceService();
 // Add services to the container.
-
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-builder.Services.AddScoped<IProductService, ProductManager>();
+
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
